@@ -6,7 +6,7 @@
 
 Proyek ini mengeksplorasi estimasi ketebalan *Retinal Nerve Fiber Layer* (RNFL) pada 12 sektor jam menggunakan citra fundus retina dan fitur visual dari RETFound. Penelitian dilakukan sebagai eksperimen regresi untuk mendukung eksplorasi skrining glaukoma, bukan sebagai pengganti pemeriksaan klinis menggunakan Optical Coherence Tomography (OCT).
 
-### Objectives
+### Tujuan
 
 - Mengevaluasi kemampuan fitur RETFound dalam memprediksi ketebalan RNFL.
 - Membandingkan performa regresi OLS, Ridge, Lasso, dan ElasticNet.
@@ -23,14 +23,14 @@ Proyek ini mengeksplorasi estimasi ketebalan *Retinal Nerve Fiber Layer* (RNFL) 
 6. **Additional experiments:** Menguji ensemble Ridge–ExtraTrees, augmentasi fotometrik, dan strategi pemilihan data berlabel UCB1.
 
 ### Dataset
-
+- Adapun dataset yang digunakan meruapakan dataset privat dari rumah sakit 
 - Data awal: 175 record dari 90 pasien.
 - Data setelah audit: 152 record dari 84 pasien.
 - Kohort akhir: 78 mata kanan (OD) dan 74 mata kiri (OS).
 - Kategori diagnosis: 82 record glaukoma dan 70 record normal.
 - Target: ketebalan RNFL pada 12 sektor jam, dalam mikrometer (µm).
 
-### Results
+### Hasil
 
 | Model | MAE (µm) | RMSE (µm) | R² |
 |:--|--:|--:|--:|
@@ -45,7 +45,7 @@ Ensemble Ridge–ExtraTrees dengan augmentasi menghasilkan MAE sekitar 20.53 µm
 
 Pada simulasi pemilihan pasien berlabel, UCB1 menghasilkan MAE 24.10 µm, sedangkan strategi random menghasilkan 23.95 µm. UCB1 belum menunjukkan keunggulan yang konsisten.
 
-### Limitations
+### Batasan
 
 - Ukuran kohort relatif kecil, yaitu 84 pasien.
 - Pairing citra fundus dengan label OCT dan kesesuaian tanggal pemeriksaan belum terverifikasi sepenuhnya.
@@ -54,16 +54,16 @@ Pada simulasi pemilihan pasien berlabel, UCB1 menghasilkan MAE 24.10 µm, sedang
 - Lasso dan ElasticNet menunjukkan peringatan konvergensi.
 - Belum dilakukan evaluasi eksternal atau pembandingan dengan backbone alternatif.
 
-### Conclusion
+### Kesimpulan
 
 Fitur RETFound yang dibekukan menunjukkan potensi untuk eksperimen regresi ketebalan RNFL pada 12 sektor. Ridge menjadi model utama berdasarkan evaluasi OOF berbasis pasien. Meskipun demikian, validasi label, perluasan kohort, pengujian eksternal, dan evaluasi klinis lebih lanjut diperlukan sebelum pendekatan ini dapat dipertimbangkan untuk penerapan skrining glaukoma.
 
-### References
+### Referensi
 
 - Zhou et al. (2023). RETFound. *Nature*, 622, 156–163. https://www.nature.com/articles/s41586-023-06555-x
 - National Eye Institute. Glaucoma. https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma
 - American Academy of Ophthalmology. https://pubmed.ncbi.nlm.nih.gov/30322450/
 
-### Project Source
+### Project Source dan Catatan
 
 Notebook project dibuat dan di audit di kaggle dengan menggunakan data privat. adapun `main.ipnb` meruapakan copy dari notebook terbaru
